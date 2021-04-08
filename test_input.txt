@@ -1,0 +1,5 @@
+Snickers Bar| 10| 0.99
+Bubble gum| 15| 0.75
+Soda|5|1.25
+Bubble gum| 15| 0.75
+Soda|23|1.25
