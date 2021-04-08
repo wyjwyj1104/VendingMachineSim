@@ -1,88 +1,61 @@
-# vintri_backend
+# Vending Machine Exercise
 
 ## Introduction
 
-`vintri_backend` 3rd party API to create an express.js base API.
+`VendingMachineSim` is a sample Java application that implements the business logic for operating a simple vending machine.
 * Note: All error handling are placed with error code 500 internal server error for consistency.
-* Start date: 202103182300
-* V0: 202103181112 Project setup.
-* V1: 202103190116 Endpoint tested.
+* Start date: 202104080000
+* V0: 202104080010 Project setup.
+* V1: 202104080312 Simulation tested.
 
 
 ## Source
-Beer lists reference Punk API:
-* https://punkapi.com/documentation/v2
-
-Regex Tester:
-* https://www.regextester.com/
+Exercise link:
+* https://github.com/wyjwyj1104/VendingMachineSim/blob/main/2021_Q2_java_exercise_vending_machine.docx
 
 
 ## Prerequisite
 
-* [NodeJs 12](https://nodejs.org/en/) It is recommended to use a version manager such as [NVM](https://github.com/nvm-sh/nvm) to install NodeJS.
+* [Java 10](https://www.oracle.com/ca-en/java/technologies/java-archive-javase10-downloads.html) Required to install Java SE 10.
+* [JavaDoc](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html) Reference to JavaDoc for documentation.
+
+
 
 ## Setup and running the app
 
 ```
-$ npm install
-$ npm start
-```
-
-## .env
-* Since it is a public project I decided to just put the password here just in case who wants to view the DB.
-
-```
-NODE_ENV=dev
-DB_URL=mongodb+srv://cluster1.zksz5.mongodb.net/vintri
-DB_USER=admin
-DB_PASS=54y4oH9VVGMbJRxL
+$ javac VendingMachineSim.java
+$ java VendingMachineSim.java
 ```
 
 ## Test
 
-### Unit test
-
-```
-$ npm test
-```
-
-### Postman  test
-
-* **Run Server:**
-```
-$ npm start
-```
-
-* **Basic Auth:** Username: "admin", Password: "qwe123"
-* **Get beer by name:** GET http://localhost:3000/beers?name=Bad
-* **Get all beers list:** GET http://localhost:3000/beers/all
-* **Add beer rating by ID:** PUT http://localhost:3000/beers/6054564a15ad51a92e9b4c5c?rating=1
-
-## Fundamentals
-
-The code is divided into different modules which consist of 3 layers: Controller, Business Service, and Data Model.
-
-* **Controllers:** are responsible for handling incoming request and returning response to the client.
-* **Services:** are responsible for handling the actual business logic.
-* **Models:** are the representations of the business model.
+1. Run the app.
+2. Displays the vending machine data.
+3. Program asks user to select the slot number.
+4. Select a slot number (For testing file, can choose from 1-7).
+5. Program asks user to select the quantity of the items to buy, if previous input is valid.
+6. Select a quantity number (For testing file slot 1, quantity can choose from 1-10).
+7. Program asks user to insert money to the machine, if previous input is valid
+8. Users can only put $0.05, $0.10, $0.25, $1.00, $5.00 into the machine input.
+9. If user inserts sufficient money to buy the total items (quantity * item price), the items will be vended out from the machine.
+10. Return remaining changes to the user.
 
 
-## Clear process
 
-### Dev purpose
-
-```
-$ lsof -i tcp:3000
-$ kill -9 PID
-```
 
 ### Dev purpose
 
 ```.todo
 - [X] Project setup.
-- [X] Task 1: Add a REST endpoint to retrieve a list of beers
-- [X] Task 2: Add a REST endpoint to allow a user to add a rating to a beer.
-- [X] Task 3: Create an express middleware module.
-- [X] Task 4: Unit tests Add applicable unit tests to the express middleware module in Task 3.
-- [ ] Task 5: Add caching support.
+- [X] Task 1: Architecting data models.
+- [X] Task 2: Loading initial testing data.
+- [X] Task 3: Planning expecting output and work flow.
+- [X] Task 4: Implementation.
+- [ ] TODO: Unit test.
+- [X] Task 5: Main loop logic.
+- [X] Task 6: Cleaning and refactoring.
+- [X] Task 7: User inputs.
+- [X] Task 8: User testing.
+- [X] Task 9: Review and upload.
 ```

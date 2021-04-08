@@ -259,6 +259,7 @@ public class VendingMachineSim {
        *
        * @param vm Main VendingMachine object of the simulation.
        */
+      BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
       float userInput = 0.00f;
       Boolean userStarted = false;
       Boolean userSlotNumber = false;
@@ -358,7 +359,6 @@ public class VendingMachineSim {
        *
        * This method initializes the data and runs the main loop of the program.
        */
-      BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
       VendingMachine vm = new VendingMachine();
       loadVMFromFile(vm);
       mainLoop(vm);
